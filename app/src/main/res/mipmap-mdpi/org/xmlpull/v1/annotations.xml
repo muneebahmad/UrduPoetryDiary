@@ -1,0 +1,5 @@
+<root>
+  <item name='org.xmlpull.v1.XmlPullParser FEATURE_PROCESS_NAMESPACES'>
+    <annotation name='java.lang.annotation.Deprecated' />
+  </item>
+</root>

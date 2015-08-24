@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<pk-api>
+    <date val="1-2-15" />
+    <poet val="Muneeb Ahmad" />
+    <poem val="Jago jago subha hui" />
+
+    <urdu val="ہوئی ہے شام تو آنکھوں میں بس گیا پھر تو" />
+    <urdu val="کہاں گیا ہے میرے شہر کے مسافر تو" />
+    <urdu val="مری مثال کہ اک نخل خشک صحرا ہوں" />
+    <urdu val="تیرا خیال کہ شاخ چمن کا طائر تو" />
+    <urdu val="میں جانتا ہوں کہ دنیا تجھے بدل دے گی" />
+    <urdu val="میں مانتا ہوں کہ ایسا نہیں بظاہر تو" />
+    <urdu val="ہنسی خوشی سے بچھڑ جا اگر بچھڑنا ہے" />
+    <urdu val="یہ ہر مقام یہ کیا سوچتا ہے آخر تو" />
+    <urdu val="فضا اداس ہے رت مضمحل ہے میں چپ ہوں" />
+    <urdu val="جو ہو سکے تو چلا آ کسی کی خاطر تو" />
+    <urdu val="فراز تو نے اسے مشکلوں میں ڈال دیا" />
+    <urdu val="زمانہ صاحب زر اور صرف شاعر تو" />
+
+    <roman val="Hoi Hai Shaam To Aankhon Mein Bas Gaya Phir To" />
+    <roman val="Kahan Gaya Hai Mere Shehar Ke Musafir To" />
+    <roman val="Meri Misaal Ke Ik Nakhl Khushk Sehraa Hon" />
+    <roman val="Tera Khayaal Ke Shaakh Chaman Ka Tair To" />
+    <roman val="Mein Jaanta Hon Ke Duniya Tujhe Badal Day Gi" />
+    <roman val="Mein Maanta Hon Ke Aisa Nahi Bzahir To" />
+    <roman val="Hansi Khushi Se Bhichar Ja Agar Bicharna Hai" />
+    <roman val="Yeh Har Maqam Yeh Kya Sochta Hai Aakhir To" />
+    <roman val="Fiza Udaas Hai Ruut Muzamahil Hai Mein Chup Hon" />
+    <roman val="Jo Ho Sakay To Chala Aa Kisi Ki Khatir To" />
+    <roman val="Faraz To Ne Usay Mushkilo Mein Daal Diya" />
+    <roman val="Zamana Sahib Zar Aur Sirf Shayar To" />
+</pk-api>
