@@ -40,7 +40,8 @@ public class SplashActivity extends Activity {
 
     private void openFromAssets() {
         myParser = new MyParser("");
-        myParser.fetchFromAssets(getApplicationContext());
+        //myParser.fetchFromAssets(getApplicationContext());
+        myParser.fetchXmlFromWeb("http://thepoetrydiary.com/urdupoetry/august-15.xml");
         PoetParser.getsInstance("").fetchFromAssets(getApplicationContext());
     }
 

@@ -136,7 +136,11 @@ public class MyParser {
         }
     }
 
-    public void fetchXmlFromWeb() {
+    /**
+     *
+     * @param url
+     */
+    public void fetchXmlFromWeb(final String url) {
         Thread pThread = new Thread(new Runnable() {
             @Override
             public void run() {

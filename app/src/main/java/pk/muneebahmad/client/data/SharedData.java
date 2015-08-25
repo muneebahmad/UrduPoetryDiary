@@ -1,5 +1,13 @@
 package pk.muneebahmad.client.data;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.ActivityNotFoundException;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
+
 import pk.muneebahmad.client.util.Log;
 
 /**
@@ -180,6 +188,57 @@ public class SharedData {
 
     public void setSearchByDatePoetu(String searchByDatePoetu) {
         this.searchByDatePoetu = searchByDatePoetu;
+    }
+
+    /**
+     *
+     * @param context
+     */
+    public static void makeExitDialog(final Activity activity, Context context) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        builder.setTitle("Exit Dialog").
+                setMessage("Do you really want to exit?").
+                setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        activity.finish();
+                    }
+                }).setNeutralButton("Rate Us", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                rateUsClicked(activity);
+            }
+        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
+    }
+
+    /**
+     *
+     * @param activity
+     */
+    private static void rateUsClicked(final Activity activity) {
+        try {
+            activity.startActivity(new Intent("android.intent.action.VIEW",
+                    Uri.parse("market://details?id=" +
+                            "com.ardentlabs.urdupoetrydiary")));
+        } catch (ActivityNotFoundException e) {
+            Log.log("RATE US ActivityNotFoundException");
+        }
+    }
+
+    /**
+     *
+     */
+    public static void quitSystem() {
+        System.exit(0);
     }
 
     /**

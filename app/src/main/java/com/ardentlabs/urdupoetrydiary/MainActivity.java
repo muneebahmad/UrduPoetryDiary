@@ -111,6 +111,12 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        } else if (id == R.id.action_about) {
+
+        } else if (id == R.id.action_quit) {
+            SharedData.getInstance().makeExitDialog(this, getApplicationContext());
+        } else if (id == R.id.action_updates) {
+
         }
 
         return super.onOptionsItemSelected(item);
