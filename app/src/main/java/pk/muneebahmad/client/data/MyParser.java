@@ -122,7 +122,7 @@ public class MyParser {
 
                         break;
                 }
-                Log.log("At line >>>> " + i);
+                //Log.log("At line >>>> " + i);
                 ++i;
                 event = myParser.next();
             }

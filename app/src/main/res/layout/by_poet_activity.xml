@@ -50,6 +50,15 @@
             android:id="@+id/poet_scrollview"
             >
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/by_poet_linear_layout"
+                >
+
+            </LinearLayout>
+
         </ScrollView>
 
     </LinearLayout>

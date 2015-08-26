@@ -11,6 +11,8 @@ import android.widget.ImageView;
 
 import pk.muneebahmad.client.data.MyParser;
 import pk.muneebahmad.client.data.PoetParser;
+import pk.muneebahmad.client.util.Dater;
+import pk.muneebahmad.client.util.Log;
 
 /**
  * Created by muneebahmad on 16/05/15.
@@ -41,8 +43,9 @@ public class SplashActivity extends Activity {
     private void openFromAssets() {
         myParser = new MyParser("");
         //myParser.fetchFromAssets(getApplicationContext());
-        myParser.fetchXmlFromWeb("http://thepoetrydiary.com/urdupoetry/august-15.xml");
-        PoetParser.getsInstance("").fetchFromAssets(getApplicationContext());
+        myParser.fetchXmlFromWeb("http://thepoetrydiary.com/urdupoetry/" + Dater.getInstance().getMonthInStringLowerCase() +
+                "-" + Dater.getInstance().getYearLastTwo() + ".xml");
+        PoetParser.getsInstance("http://thepoetrydiary.com/urdupoetry/poetry-index.xml").fetchFromWeb();
     }
 
     private void setSplashLogo() {

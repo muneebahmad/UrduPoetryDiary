@@ -144,6 +144,8 @@ public class DailyPoetryActivity extends ActionBarActivity implements ActionBar.
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        } else if (id == R.id.action_quit) {
+            SharedData.getInstance().makeExitDialog(this, getApplicationContext());
         }
 
         return super.onOptionsItemSelected(item);

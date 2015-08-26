@@ -45,7 +45,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         setToolbar();
         initUI();
 
-        Log.log(Dater.getInstance().getDate());
+        printLog();
     }
 
     private void setToolbar() {
@@ -66,6 +66,16 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         this.buttByDate.setOnClickListener(this);
         this.buttMoreApps.setOnClickListener(this);
         this.buttTellAFrnd.setOnClickListener(this);
+    }
+
+    /**
+     * DEBUG
+     */
+    private void printLog() {
+        Log.log(Dater.getInstance().getYear() + "");
+        Log.log(Dater.getInstance().getYearLastTwo());
+        Log.log(Dater.getInstance().getMonthInStringLowerCase());
+        Log.log(Dater.getInstance().getDate());
     }
 
     private void makeExitDialog() {
@@ -166,9 +176,11 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             finish();
         } else if (view == this.buttByPoet) {
             SharedData.getInstance().setActivatedClasses(SharedData.ActivatedClasses.CLASS_BY_POET);
+            Log.log("INDEX LIST SIZE => " + PoetParser.indexList.size());
             for (int i = 0; i < PoetParser.indexList.size(); i++) {
-                Log.log("ARRAYLIST >>> " + PoetParser.indexList.get(i).getPoet());
+                Log.log("POET NAME >> " + PoetParser.indexList.get(i).getPoet());
             }
+
             startActivity(new Intent(this, ByPoetActivity.class));
             finish();
         } else if (view == this.buttByDate) {

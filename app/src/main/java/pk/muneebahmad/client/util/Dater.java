@@ -42,8 +42,24 @@ public class Dater {
         return "" + day + "-" + month + "-" + retYear;
     }
 
+    /**
+     *  Year in format YYYY
+     * @return int
+     */
     public int getYear() {
         return calendar.get(Calendar.YEAR);
+    }
+
+    /**
+     * Year in format YY
+     *
+     * @return java.lang.String
+     */
+    public String getYearLastTwo() {
+        int y = calendar.get(Calendar.YEAR);
+        String finalYr = y + "";
+        String retY = finalYr.substring(2);
+        return retY;
     }
 
     private int getDateFromCalendar() {
@@ -52,6 +68,53 @@ public class Dater {
 
     private int getMonthFromCalendar() {
         return calendar.get(Calendar.MONTH);
+    }
+
+    public String getMonthInStringLowerCase() {
+        int m = getMonthFromCalendar();
+        String mth = "";
+        switch (m) {
+            case 0:
+                mth = JAN;
+                break;
+            case 1:
+                mth = FEB;
+                break;
+            case 2:
+                mth = MAR;
+                break;
+            case 3:
+                mth = APR;
+                break;
+            case 4:
+                mth = MAY;
+                break;
+            case 5:
+                mth = JUN;
+                break;
+            case 6:
+                mth = JUL;
+                break;
+            case 7:
+                mth = AUG;
+                break;
+            case 8:
+                mth = SEP;
+                break;
+            case 9:
+                mth = OCT;
+                break;
+            case 10:
+                mth = NOV;
+                break;
+            case 11:
+                mth = DEC;
+                break;
+            default:
+                break;
+        }
+
+        return mth.toLowerCase();
     }
 
     /**

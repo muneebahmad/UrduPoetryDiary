@@ -29,6 +29,7 @@ public class PoetParser {
     private String url;
     private String id;
     private String poet;
+    private String poetu;
 
     private int counter;
 
@@ -63,6 +64,7 @@ public class PoetParser {
         int event;
         String text = null;
         String name = null;
+        String nameu = null;
         String date = null;
         String filename = null;
         int i = 1;
@@ -72,22 +74,25 @@ public class PoetParser {
             String n = parser.getName();
             switch (event) {
                 case XmlPullParser.START_TAG:
+                    if (n.equals("name")) {
+                        name = parser.getAttributeValue(null, "val");
+                    }
                     break;
                 case XmlPullParser.TEXT:
                     text = parser.getText();
                     break;
                 case XmlPullParser.END_TAG:
-                    if (n.equals("name")) {
-                        name = text;
+                    if (n.equals("nameu")) {
+                        nameu = text;
                     } else if (n.equals("date")) {
                         date = text;
                     } else if (n.equals("filename")) {
                         filename = text;
-                        indexList.add(new PoetryIndex(date, name, filename));
+                        indexList.add(new PoetryIndex(name, nameu, date, filename));
                     }
                     break;
             }
-            Log.log("At KKKK >>> " + i);
+            //Log.log("At KKKK >>> " + i);
             ++i;
             event = parser.next();
         }

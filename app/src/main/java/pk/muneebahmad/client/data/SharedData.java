@@ -36,6 +36,8 @@ public class SharedData {
     private String searchByDatePoemu;
     private String searchByDatePoetu;
 
+    private int clickIndex = 0;
+
     public static enum ActivatedClasses {
         CLASS_DAILY_POETRY,
         CLASS_BY_POET,
@@ -188,6 +190,18 @@ public class SharedData {
 
     public void setSearchByDatePoetu(String searchByDatePoetu) {
         this.searchByDatePoetu = searchByDatePoetu;
+    }
+
+    public int getClickIndex() {
+        return this.clickIndex;
+    }
+
+    /**
+     *
+     * @param clickIndex
+     */
+    public void setClickIndex(int clickIndex) {
+        this.clickIndex = clickIndex;
     }
 
     /**
