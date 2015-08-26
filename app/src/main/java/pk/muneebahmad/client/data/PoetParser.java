@@ -23,6 +23,7 @@ import pk.muneebahmad.client.util.PoetryIndex;
 public class PoetParser {
     
     public static java.util.ArrayList<PoetryIndex> indexList = new java.util.ArrayList<>();
+    public static java.util.ArrayList<PoetryIndex> addIndexList = new java.util.ArrayList<>();
 
     private static PoetParser sInstance = null;
 
@@ -149,10 +150,29 @@ public class PoetParser {
                     e.printStackTrace();
                 } catch (IOException e) {
                     e.printStackTrace();
+                } finally {
+                    addToAddedList();
                 }
             }
         });
         pThread.start();
+    }
+
+    private void addToAddedList() {
+        if (indexList.size() > 0) {
+            for (int i = 0; i < indexList.size(); i++) {
+                if (addIndexList.size() > 0) {
+                    for (int j = 0; j < addIndexList.size(); j++) {
+                        if (indexList.get(i).compareIndexes(addIndexList.get(j))) {
+                            Log.log("ADDED LIST >>>> " + j);
+                        }
+                    }
+                } else {
+                    addIndexList.add(indexList.get(i));
+                    Log.log("ELSE IN ADDED LIST");
+                }
+            }
+        }
     }
 
     /**
